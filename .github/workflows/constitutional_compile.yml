@@ -30,3 +30,4 @@ jobs:
 
         - name: Generate Constitutional Snapshot
   run: python scripts/snapshot_generator.py
+
