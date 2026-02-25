@@ -1,9 +1,6 @@
 name: HelixGate Constitutional Compile
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -12,18 +9,16 @@ permissions:
   contents: read
 
 jobs:
-  constitutional-compile:
-    name: HelixGate Constitutional Compile Check
+  constitutional_compile:
+    name: constitutional_compile
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: Run Compile Validator
+      - name: Run compile validator
         run: python 04_validation/compile_validator.py
