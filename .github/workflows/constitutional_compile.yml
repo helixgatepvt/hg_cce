@@ -8,8 +8,12 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
-  compile-validation:
+  constitutional-compile:
+    name: HelixGate Constitutional Compile Check
     runs-on: ubuntu-latest
 
     steps:
@@ -22,5 +26,4 @@ jobs:
           python-version: '3.11'
 
       - name: Run Compile Validator
-        run: |
-          python 04_validation/compile_validator.py
+        run: python 04_validation/compile_validator.py
