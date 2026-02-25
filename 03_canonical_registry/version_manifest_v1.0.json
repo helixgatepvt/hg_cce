@@ -1,0 +1,12 @@
+{
+  "CMAS_version": "v1.0",
+  "SMS_version": "v1.0",
+  "ME_version": "v1.0",
+  "WTA_version": "v1.0",
+  "ALMS_version": "v1.0",
+  "ARCH_version": "v1.0",
+  "OGIP_version": "v1.0",
+  "conditioning_matrix_version": "v1.0",
+  "operating_mode": "STRUCTURAL_ONLY",
+  "registry_hash": "a0e9a3e033079e983d31ad33a18bd00558bf4055e69b1ff1caa1144d57508282"
+}

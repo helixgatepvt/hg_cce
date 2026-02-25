@@ -1,0 +1,710 @@
+{
+  "ACU-CMAS-001": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-002": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-003": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-004": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-005": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-006": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-007": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-008": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-009": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-010": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-011": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-012": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-013": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-014": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-015": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-016": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-017": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-018": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-019": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-020": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-021": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-022": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-023": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-024": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-025": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-026": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-027": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-028": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-029": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-030": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-031": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-032": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-033": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-CMAS-034": {
+    "origin_document": "CMAS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-001": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-002": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-003": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-004": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-005": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-006": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-007": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-008": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-009": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-010": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-011": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-012": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-013": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-014": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-015": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-016": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-017": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-018": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-019": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-020": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-021": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-022": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-023": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-024": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-025": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-026": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-SMS-027": {
+    "origin_document": "SMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-001": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-002": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-003": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-004": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-005": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-006": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-007": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-008": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-009": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-010": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-011": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-012": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-013": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-014": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-015": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-016": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-017": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-018": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-019": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-020": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-021": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-022": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-023": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-024": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-025": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-ME-026": {
+    "origin_document": "ME",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-001": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-002": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-003": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-004": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-005": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-006": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-007": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-008": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-009": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-010": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-011": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-012": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-013": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-014": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-015": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-016": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-017": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-018": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-019": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-020": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-021": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-022": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-023": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-024": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-WTA-025": {
+    "origin_document": "WTA",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-001": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-002": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-003": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-004": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-005": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-006": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-007": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-008": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-009": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-010": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-011": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-012": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-013": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-014": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-015": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-016": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-017": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-018": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-019": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ALMS-020": {
+    "origin_document": "ALMS",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-001": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-002": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-003": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-004": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-005": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-006": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-007": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-008": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-009": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-010": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-011": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-012": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-013": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-014": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-015": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-016": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-017": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-018": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-019": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-020": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-021": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-ARCH-022": {
+    "origin_document": "ARCH",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-001": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-002": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-003": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-004": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-005": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-006": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-007": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-008": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-009": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-010": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-011": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-012": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-013": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-014": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-015": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-016": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-017": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-018": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-019": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-020": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-021": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-022": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  },
+  "ACU-OGIP-023": {
+    "origin_document": "OGIP",
+    "enforcement_level": "hard"
+  }
+}

@@ -1,0 +1,1433 @@
+{
+  "registry_version": "v1.0-registry",
+  "operating_mode": "STRUCTURAL_ONLY",
+  "predictive_layer_status": "DORMANT",
+  "authority_hierarchy": [
+    "HG-CMAS v1.0",
+    "HG-SMS v1.0",
+    "HG-ME v1.0",
+    "HG-WTA v1.0",
+    "HG-ALMS v1.0",
+    "HG-ARCH v1.0",
+    "HG-OGIP v1.0"
+  ],
+  "ac_units": [
+    {
+      "acu_id": "ACU-CMAS-001",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-001\nDIMENSION_LOCK\ndim(X) == 112\nEnforcement: HARD_FAIL\nTolerance: 0",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-002",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-002\nINDEX_DOMAIN_LOCK\nd ∈ {1..7}\nv ∈ {1..16}\nEnforcement: HARD_FAIL",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-003",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-003\nSTATE_EXPANSION_PROHIBITION\nlen(X) == 112\nAND no runtime augmentation\nEnforcement: HARD_FAIL\n\nSECTION 2 — Coordinate Construction",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-004",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-004\nBOUNDED_SIGNAL\n0 ≤ m[d,v] ≤ 1\n0 ≤ i[d,v] ≤ 1\nHARD_FAIL",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-005",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-005\nCOORDINATE_DEFINITION\nx[d,v] = m[d,v] * i[d,v]\nDeterministic only.\n\nSECTION 3 — Conditioning Operator P",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-006",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-006\nP.shape == (112,112)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-007",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-007\nrank(P) == 112",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-008",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-008\nP immutable during runtime session",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-009",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-009\ndim(PX) == 112\n\nSECTION 4 — Interaction Matrix W",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-010",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-010\nW.shape == (112,112)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-011",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-011\nW == W.T",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-012",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-012\nEigenvalues(W) ≥ 0",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-013",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-013\nmax_eigenvalue(W) ≤ 1",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-014",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-014\nFor each row i:\nΣ_j |W[i,j]| ≤ κ\nκ < 1",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-015",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-015\nBaseline Structural Mode:\nW = γI\n0 < γ < 1\nActivated if predictive mode inactive.\n\nSECTION 5 — Energy Definition",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-016",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-016\nE(X) = 0.5 * (PX)^T W (PX)\n\nSECTION 6 — Structural Dynamics",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-017",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-017\ndX/dt = P^{-1} [ (W - αI)PX - β (PX ⊙ PX) ]\nα > 0\n0 < β < α\n\nSECTION 7 — Stability",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-018",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-018\nJ = (W - αI) - 2β diag(PX)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-019",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-019\ninstability = max(Re(eigenvalues(J))) > 0",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-020",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-020\nS(X) = - max(Re(eigenvalues(J)))\nClassification:\nS > 0 → stable\nS = 0 → critical\nS < 0 → unstable\n\nSECTION 8 — Fragility",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-021",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-021\nv_max = eigenvector associated with max eigenvalue(J)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-022",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-022\nF[i] = |v_max[i]|\n\nSECTION 9 — Metric Tensor G",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-023",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-023\nG positive-definite",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-024",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-024\n||X||_G^2 = X^T G X\n\nSECTION 10 — M&A Operator",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-025",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-025\nX_M = X_A + X_B",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-026",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-026\nΔE = 2 (PX_A)^T W (PX_B)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-027",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-027\nmax(Re(eigenvalues(J(PX_M)))) < 0\nPost-merger stability requirement.\n\nSECTION 11 — Growth Multiplier",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-028",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-028\nE(X + ΔX) ≥ k E(X)\nk ∈ {2,5,10}",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-029",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-029\nΔX ∝ P^{-1} W (PX)\n\nSECTION 12 — Drift Monitoring",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-030",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-030\nMonitor:\ndE/dt\ndλ_max/dt\nλ_max → 0⁻\n\nSECTION 13 — Portfolio Contagion",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-031",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-031\nmax(Re(eigenvalues(J_p))) > 0\nDefines systemic instability.\n\nSECTION 14 — Stress Simulation",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-032",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-032\nX' = X + ΔX\nRecompute all structural observables.\n\nSECTION 15 — Uncertainty Envelope",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-033",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-033\n||ΔX||_G ≤ ε\n\nSECTION 16 — Immutability Enforcement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-CMAS-034",
+      "origin_document": "CMAS",
+      "description": "ACU-CMAS-034\nRuntime modification prohibited for:\n- State dimension\n- Energy definition\n- Stability definition\n- Interaction matrix constraints\n- Dynamical system\nViolation → invalidate system.\n\nTotal ACUs: 34\nDeterministic enforcement: Yes\nHeuristic drift allowed: No",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-001",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-001\nSTATE_REFERENCE_LOCK\nX ∈ R^112\nMust match HG-CMAS dimensional definition.\nEnforcement: HARD_FAIL",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-002",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-002\nONTOLOGY_LAYER_BOUNDARY\nHG-SMS defines signal ontology only.\nHG-SMS must NOT perform:\n- normalization\n- conditioning\n- interaction learning\n- stability computation\n- predictive modeling\nViolation → HARD_FAIL\n\nSECTION 2 — Canonical Coordinate Construction Rule",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-003",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-003\nCOORDINATE_FORMULA\nx[d,v] = m[d,v] * i[d,v]\nDeterministic multiplication only.",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-004",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-004\nSIGNAL_BOUNDS\n0 ≤ m[d,v] ≤ 1\n0 ≤ i[d,v] ≤ 1\nViolation → HARD_FAIL",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-005",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-005\nCONFIDENCE_DEFINITION\ni[d,v] = c_data * c_verification\n0 ≤ c_data ≤ 1\n0 ≤ c_verification ≤ 1\nDeterministic only.\n\nSECTION 3 — Admissible Signal Properties",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-006",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-006\nQUANTIFIABILITY_REQUIREMENT\nsignal must be computable from observable data\nSubjective or non-observable signals → HARD_FAIL",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-007",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-007\nREPRODUCIBILITY_REQUIREMENT\nidentical_inputs ⇒ identical_signal_output",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-008",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-008\nMANIPULATION_RESISTANCE\nSignals must be ratio-based, auditable, and resistant to gaming.",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-009",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-009\nPROHIBITED_SIGNAL_TYPES\nThe following are disallowed:\n- subjective leadership ratings\n- cultural assessments\n- sentiment analysis\n- narrative strategy scoring\n- survey-based soft metrics\nDetection → HARD_FAIL\n\nSECTION 4 — Dimensional Structure Enforcement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-010",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-010\nDIMENSION_GROUP_LOCK\nDimensions = {D1, D2, D3, D4, D5, D6, D7}\nEach dimension contains exactly 16 vectors",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-011",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-011\nFLATTENING_ORDER_LOCK\nCanonical ordering = D1-V01 → D7-V16\nNo remapping permitted.",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-012",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-012\nCOORDINATE_COUNT_LOCK\nTotal coordinates = 7 × 16 = 112\nViolation → HARD_FAIL\n\nSECTION 5 — Dimension Domain Locks\nEach domain must contain exactly the 16 defined signals from the constitutional document. No additions or removals permitted.",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-013",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-013\nD1 — Capital Structure Integrity Lock\nD1 contains exactly 16 defined capital structure signals",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-014",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-014\nD2 — Governance & Control Lock\nD2 contains exactly 16 defined governance/control signals",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-015",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-015\nD3 — Temporal Risk Lock\nD3 contains exactly 16 defined temporal risk signals",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-016",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-016\nD4 — Information & Revenue Integrity Lock\nD4 contains exactly 16 defined information/revenue signals",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-017",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-017\nD5 — Market & Liquidity Lock\nD5 contains exactly 16 defined market/liquidity signals",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-018",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-018\nD6 — Execution Discipline Lock\nD6 contains exactly 16 defined execution signals",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-019",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-019\nD7 — Failure Visibility Lock\nD7 contains exactly 16 defined failure-visibility signals\n\nSECTION 6 — Ratio-Based Enforcement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-020",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-020\nEach signal must be expressible as:\n- bounded scalar OR\n- ratio of observable quantities\nNarrative or heuristic scoring prohibited.\n\nSECTION 7 — Code Audit Integration Constraint",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-021",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-021\nSoftware metrics must:\n- be ratio-based\n- pass normalization rules (HG-ME layer)\n- be confidence-weighted\n- map into D4 or D6 only\nNo new dimensions allowed.\n\nSECTION 8 — IP Audit Integration Constraint",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-022",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-022\nIP metrics must:\n- be ratio-based\n- map into D1, D5, or D6\n- not expand canonical dimension\n\nSECTION 9 — Reaction Modeling Constraint",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-023",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-023\nNo strategic behavior simulation permitted.\nOnly observed outcome-based metrics allowed.\nViolation → HARD_FAIL\n\nSECTION 10 — Conditioning Separation",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-024",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-024\nSignals populate canonical X before conditioning.\nConditioning operator P acts only after X construction.\n\nSECTION 11 — Ontology Mutation Prohibition",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-025",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-025\nNot allowed:\n- adding new dimensions\n- removing coordinates\n- dynamic remapping\n- qualitative overrides\n- runtime ontology mutation\nViolation → SYSTEM INVALID\n\nSECTION 12 — Determinism Requirement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-026",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-026\nIdentical inputs + identical configuration ⇒ identical canonical coordinates\nNo stochastic elements permitted.\n\nSECTION 13 — Version Governance",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-SMS-027",
+      "origin_document": "SMS",
+      "description": "ACU-SMS-027\nChanges require:\n- formal proposal\n- empirical validation\n- calibration impact analysis\n- version increment\n- governance approval\nSilent changes prohibited.\n\nTotal ACUs: 27\nDimensional expansion permitted: NO\nNarrative scoring permitted: NO\nHeuristic drift permitted: NO\nRuntime ontology mutation permitted: NO",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-001",
+      "origin_document": "ME",
+      "description": "ACU-ME-001\nMEASUREMENT_AUTHORITY_LOCK\nOnly HG-ME may construct X ∈ R^112 from structured signals\nUpstream or downstream layers modifying X → HARD_FAIL",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-002",
+      "origin_document": "ME",
+      "description": "ACU-ME-002\nPOST-ME_DETERMINISM_LOCK\nAfter HG-ME execution, X must be deterministic\nNo stochastic operations allowed.\n\nSECTION 2 — Canonical State Construction",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-003",
+      "origin_document": "ME",
+      "description": "ACU-ME-003\nNORMALIZATION_RULE\nm[d,v] = min(1, s[d,v] / P95[d,v | sector, stage, revenue])\nWhere:\ns[d,v] = raw signal\nP95 = empirical 95th percentile baseline\nNo global constants permitted.",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-004",
+      "origin_document": "ME",
+      "description": "ACU-ME-004\nCONFIDENCE_WEIGHT_RULE\ni[d,v] = c_data * c_verification\n0 ≤ c_data ≤ 1\n0 ≤ c_verification ≤ 1",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-005",
+      "origin_document": "ME",
+      "description": "ACU-ME-005\nCOORDINATE_CONSTRUCTION\nx[d,v] = m[d,v] * i[d,v]\n\nSECTION 3 — Calibration Dataset Requirements",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-006",
+      "origin_document": "ME",
+      "description": "ACU-ME-006\nMINIMUM_SAMPLE_SIZE\ndataset_size ≥ 50 companies\nPreferred:\ndataset_size ≥ 200 companies",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-007",
+      "origin_document": "ME",
+      "description": "ACU-ME-007\nTIME_SERIES_REQUIREMENT\ntime_series_length ≥ 24 months",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-008",
+      "origin_document": "ME",
+      "description": "ACU-ME-008\nOUTCOME_BALANCE_REQUIREMENT\nfailure_cases ≥ 20%\nstrong_positive_cases ≥ 20%",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-009",
+      "origin_document": "ME",
+      "description": "ACU-ME-009\nDATASET_LOGGING\ndataset_version must be immutable and logged\n\nSECTION 4 — Industry-Adjusted Normalization",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-010",
+      "origin_document": "ME",
+      "description": "ACU-ME-010\nSECTOR_STAGE_BASELINE\nP95 derived empirically per (sector, stage, revenue band)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-011",
+      "origin_document": "ME",
+      "description": "ACU-ME-011\nSATURATION_RESPONSE\nIf saturation detected:\nRecompute baseline OR\nAdjust signal definition OR\nRecalibrate dataset\nSilent adjustment prohibited.\n\nSECTION 5 — Distribution Stability Requirement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-012",
+      "origin_document": "ME",
+      "description": "ACU-ME-012\nMEAN_CONSTRAINT\n0.35 ≤ μ ≤ 0.65",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-013",
+      "origin_document": "ME",
+      "description": "ACU-ME-013\nSTANDARD_DEVIATION_CONSTRAINT\n0.15 ≤ σ ≤ 0.30\nViolation → corrective action required.\n\nSECTION 6 — Vector Independence Audit",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-014",
+      "origin_document": "ME",
+      "description": "ACU-ME-014\n|corr(x_i, x_j)| ≤ 0.85\nIf violated:\n- merge signals OR\n- residualize OR\n- redefine measurement\n\nSECTION 7 — Sensitivity Stability Test",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-015",
+      "origin_document": "ME",
+      "description": "ACU-ME-015\nPerturbation test:\nx_i → x_i + ε\nConstraint:\nShift in dominant eigenvalue ≤ 10%\nPrevents single-vector dominance.\n\nSECTION 8 — Energy Distribution Stability",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-016",
+      "origin_document": "ME",
+      "description": "ACU-ME-016\nEnergy distribution must avoid:\n- concentration near zero\n- saturation near maximum\n- degenerate variance\nIf detected → recalibration required.\n\nSECTION 9 — Temporal Signal Processing",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-017",
+      "origin_document": "ME",
+      "description": "ACU-ME-017\nAllowed preprocessing:\n- rolling averages\n- variance stabilization\n- deterministic outlier clipping\nSubjective smoothing prohibited.\n\nSECTION 10 — Historical Compatibility",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-018",
+      "origin_document": "ME",
+      "description": "ACU-ME-018\nHistorical states stored as X_t, X_{t-1}, ...\nCanonical dimension must remain 112\nNo vector concatenation permitted.\n\nSECTION 11 — Confidence Weight Control",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-019",
+      "origin_document": "ME",
+      "description": "ACU-ME-019\n0.6 ≤ average_confidence ≤ 0.9\nOutside bounds → recalibration required.\n\nSECTION 12 — Data Sufficiency Gate (Live Use)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-020",
+      "origin_document": "ME",
+      "description": "ACU-ME-020\nBefore output:\n- completeness_ratio ≥ required threshold\n- sector baseline available\n- confidence within bounds\n- required signals present\n- sufficient time-series depth\nIf not:\nDowngrade to structural mode\nNo manual override permitted.\n\nSECTION 13 — Code & IP Integration",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-021",
+      "origin_document": "ME",
+      "description": "ACU-ME-021\nSoftware and IP metrics must:\n- be ratio-based\n- normalized\n- confidence-weighted\n- satisfy distribution constraints\n- map into existing coordinates\n\nSECTION 14 — Reaction Measurement Constraint",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-022",
+      "origin_document": "ME",
+      "description": "ACU-ME-022\nExternal reactions measured via observed outcomes only\nNo intent simulation permitted\n\nSECTION 15 — Calibration Workflow Enforcement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-023",
+      "origin_document": "ME",
+      "description": "ACU-ME-023\nWorkflow sequence:\n1. Assemble dataset\n2. Compute sector baselines\n3. Normalize signals\n4. Run distribution audit\n5. Run correlation audit\n6. Run sensitivity test\n7. Approve version\n8. Enable W training\nOut-of-order execution prohibited.\n\nSECTION 16 — Deployment Invariance",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-024",
+      "origin_document": "ME",
+      "description": "ACU-ME-024\nNormalization rules invariant to:\n- interaction matrix version\n- structural/predictive mode\n- client type\nNo dynamic normalization changes permitted.\n\nSECTION 17 — Version Governance",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-025",
+      "origin_document": "ME",
+      "description": "ACU-ME-025\nChanges require:\n- version increment\n- dataset reference\n- calibration report\n- parameter log\n- governance approval\nSilent changes prohibited.\n\nSECTION 18 — Determinism Requirement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ME-026",
+      "origin_document": "ME",
+      "description": "ACU-ME-026\nIdentical inputs + identical configuration ⇒ identical X\nNo stochastic elements permitted.\n\nTotal ACUs: 26\nNormalization stochasticity permitted: NO\nSilent recalibration permitted: NO\nVector dimension change permitted: NO\nManual override permitted: NO",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-001",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-001\nSINGLE_LEARNED_OBJECT_LOCK\nOnly W ∈ R^(112×112) may be learned\nLearning of:\nP\nX\nstability rules\nenergy function\nontology\n→ HARD_FAIL",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-002",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-002\nMATRIX_DIMENSION_LOCK\nW.shape == (112,112)\n\nSECTION 2 — Conditioned Training State",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-003",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-003\nTraining input must use X~ = P X\nP must be fixed and version-controlled.\n\nSECTION 3 — Permissible Targets",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-004",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-004\nALLOWED_LABEL_TYPES\nBinary collapse (3/6/12 months)\nOrdinal deal outcome\nBinary integration failure",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-005",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-005\nPROHIBITED_TARGETS\nContinuous return prediction prohibited\nViolation → HARD_FAIL\n\nSECTION 4 — Training Objective",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-006",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-006\nŷ_t = X~_t^T W X~_t",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-007",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-007\nP(Y=1) = σ(X~_t^T W X~_t)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-008",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-008\nLoss(W) = Σ BCE + λ1||W||_F^2 + λ2 R_block(W)\nRegularization mandatory.\n\nSECTION 5 — Structural Constraints on W",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-009",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-009\nSYMMETRIZATION\nW ← (W + W^T)/2",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-010",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-010\nPSD_PROJECTION\nEigenvalues(W) ≥ 0\nNegative eigenvalues clipped to 0",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-011",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-011\nSPECTRAL_NORMALIZATION\nmax_eigenvalue(W) ≤ 1\nIf violated → normalize.",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-012",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-012\nROW_DOMINANCE_ENFORCEMENT\nΣ_j |W[i,j]| ≤ κ < 1\nRescale if violated.\n\nSECTION 6 — Validation Discipline",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-013",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-013\nTemporal split:\n70% train\n15% validation\n15% test\nNo temporal leakage allowed.",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-014",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-014\n≥ 20% company holdout",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-015",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-015\nMINIMUM_PERFORMANCE_STANDARDS\nMedian lead time ≥ 6 months\nFalse positive rate ≤ 20%\nMetrics must include:\nROC-AUC\nPrecision/Recall\nFailure → predictive activation denied.\n\nSECTION 7 — Horizon-Specific Models",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-016",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-016\nSeparate classifiers required for:\n3-month\n6-month\n12-month",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-017",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-017\nMaximum predictive horizon ≤ 24 months\n\nSECTION 8 — Overvaluation Detection",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-018",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-018\nCompare structural energy trajectory vs market valuation trajectory\nDivergence regime if valuation ↑ and reinforcement ↓\n\nSECTION 9 — Integration Risk Modeling",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-019",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-019\nX_M = X_A + X_B\nX~_M = P X_M\nλ_max(J(X~_M)) used as feature\n\nSECTION 10 — Reinforcement Detection",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-020",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-020\nDetect transitions:\nLow energy → sustained high energy regimes\nNo prediction of founder ability or innovation quality permitted.\n\nSECTION 11 — Residual Monitoring",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-021",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-021\nMonitor:\nAUC drift\nFalse positive increase\nCalibration bias\nSector degradation\nTriggers review only.\n\nSECTION 12 — Retraining Policy",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-022",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-022\nRetraining allowed only if:\nDataset size increase ≥ 25%\nOR structural regime shift\nOR performance degradation beyond threshold\nContinuous online learning prohibited.\n\nSECTION 13 — Predictive Activation Gate",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-023",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-023\nPredictive mode may activate only if:\nValidated W exists\nPerformance metrics documented\nDataset ID logged\nGovernance approval recorded\nVersion registered\nElse:\nW = γI\nStructural mode enforced\n\nSECTION 14 — Deployment Constraints",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-024",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-024\nNot allowed:\nSilent W replacement\nPartial model updates\nClient-specific training\nFrontend-only toggles\n\nSECTION 15 — Determinism Requirement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-WTA-025",
+      "origin_document": "WTA",
+      "description": "ACU-WTA-025\nIdentical inputs + identical W version ⇒ identical outputs\nRandomness prohibited in inference.\n\nTotal ACUs: 25\nContinuous learning permitted: NO\nUnregistered W permitted: NO\nReturn prediction permitted: NO\nSilent model change permitted: NO",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-001",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-001\nUPSTREAM_IMMUTABILITY_LOCK\nHG-ALMS must not modify:\n- Canonical state X\n- Conditioned state X~ = P X\n- Interaction matrix W\n- Conditioning matrix P\n- Energy definition\n- Stability definition\nViolation → HARD_FAIL\n\nSECTION 2 — Core Input Requirements",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-002",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-002\nRequired inputs per entity at time t:\nX_t\nX~_t\nE(X_t)\nS(X_t)\nJacobian spectrum\nFragility vector F_t\nOptional (if predictive mode active):\nCollapse probabilities\nIntegration risk probabilities\nOvervaluation classification\n\nSECTION 3 — Pre-Deal Structural Classification",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-003",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-003\nClassification must derive strictly from:\nE(X)\nS(X)\nFragility vector\nPredictive probabilities (if active)\nNo heuristic scoring permitted.\n\nSECTION 4 — Zero-to-One Reinforcement Detection",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-004",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-004\nStructural reinforcement requires:\ndE/dt > 0\nS(X) > 0\nFragility concentration low\nExecution discipline stable\nAll must be computed deterministically.\n\nSECTION 5 — Growth Pivot Engine (2× / 5× / 10×)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-005",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-005\nObjective:\nMinimize ||ΔX||_G\nSubject to: E(X + ΔX) ≥ k E(X)\nk ∈ {2,5,10}",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-006",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-006\nFirst-order direction:\nΔX ∝ P^{-1} W (P X)\nOutput must include:\nRequired magnitude\nTarget dimensions\nStability impact\n\nSECTION 6 — Collapse Detection",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-007",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-007\nStructural early warning independent of predictive layer:\nλ_max(J) → 0⁻\nIncreasing instability drift\nRising fragility concentration\nExecution degradation",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-008",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-008\nPredictive collapse classification allowed only if predictive mode active.\nOtherwise structural-only outputs permitted.\n\nSECTION 7 — Overvaluation Detection",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-009",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-009\nCompare structural energy trajectory vs valuation trajectory\nIf valuation ↑ AND structural reinforcement ↓\n→ Divergence classification\n\nSECTION 8 — Integration Risk (M&A)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-010",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-010\nX_M = X_A + X_B\nX~_M = P X_M\nEvaluate stability and fragility redistribution",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-011",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-011\nPost-merger monitoring must track:\nStability drift\nExecution degradation\nSynergy realization\n\nSECTION 9 — Capital Exit / Restructuring Support",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-012",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-012\nRecommendations may consider:\nCollapse probability\nInstability drift\nFragility concentration\nExecution deterioration\nOutputs remain advisory.\n\nSECTION 10 — Continuous Monitoring Engine",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-013",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-013\nPeriodic workflow:\nUpdate data\nRecompute X_t\nRecompute energy & stability\nMeasure drift\nEvaluate predictive models (if active)\nGenerate alerts\nFully deterministic.\n\nSECTION 11 — Portfolio Contagion Modeling",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-014",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-014\nConstruct block Jacobian across entities\nDetect max(Re(eigenvalues(J_p))) > 0\n\nSECTION 12 — Structural Stress Simulation",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-015",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-015\nX' = X + ΔX\nRecompute E(X'), S(X'), Fragility\nPerturbation magnitude measured using G.\n\nSECTION 13 — Structural Uncertainty Envelope",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-016",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-016\n||ΔX||_G ≤ ε\nCompute stability range\nClassify robustness:\nRobust\nModerately robust\nFragile\n\nSECTION 14 — Historical Drift Analysis",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-017",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-017\nUsing stored states:\nCompute energy trend\nCompute stability trend\nCompute fragility migration\nDetect acceleration of deterioration\nHistorical data must not expand state dimension.\n\nSECTION 15 — Output Integrity",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-018",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-018\nOutputs must be:\n- Deterministic\n- Structured\n- Version-logged\n- Derived strictly from canonical mathematics\nNarrative scoring prohibited.\n\nSECTION 16 — Institutional Boundary",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-019",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-019\nSystem must not claim:\n- guaranteed returns\n- exact collapse timing\n- elimination of uncertainty\nClassification only.\n\nSECTION 17 — Determinism Requirement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ALMS-020",
+      "origin_document": "ALMS",
+      "description": "ACU-ALMS-020\nIdentical inputs + identical versions ⇒ identical outputs\nNo stochastic variation permitted.\n\nTotal ACUs: 20\nUpstream mutation permitted: NO\nHeuristic scoring permitted: NO\nAdvisory override permitted: NO\nStochastic outputs permitted: NO",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-001",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-001\nLAYER_PRECEDENCE_LOCK\nExecution order must be:\nHG-CMAS →\nHG-SMS →\nHG-ME →\nConditioning (P) →\nHG-WTA →\nHG-ALMS →\nHG-ARCH →\nHG-OGIP\nNo downstream layer may override upstream outputs.\nViolation → SYSTEM INVALID\n\nSECTION 2 — Raw Data Immutability",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-002",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-002\nRAW_DATA_IMMUTABLE\nAll raw inputs must be stored immutably.\nNo overwriting permitted.",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-003",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-003\nSOURCE_TRACEABILITY\nAll raw inputs must be timestamped and source-identified.\n\nSECTION 3 — Extraction Layer Constraints",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-004",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-004\nEXTRACTION_SCOPE_LIMIT\nAllowed:\n- Parsing financial tables\n- Extracting contractual terms\n- Detecting capital structure elements\n- Computing code metrics\n- Extracting governance data\n- Identifying revenue characteristics\nNot allowed:\n- Stability computation\n- Collapse prediction\n- Interaction learning\n- Heuristic scoring\nViolation → HARD_FAIL",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-005",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-005\nSCHEMA_VALIDATION_REQUIRED\nEach extracted field must pass:\n- Type validation\n- Unit validation\n- Range validation\n- Completeness checks\n- Consistency checks\n\nSECTION 4 — Measurement Execution Enforcement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-006",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-006\nHG-ME must execute before conditioning.",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-007",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-007\nAfter HG-ME, X must be deterministic.\n\nSECTION 5 — Conditioning Enforcement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-008",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-008\nConditioning operator P retrieved by version ID.\nP must be version-controlled.\n\nSECTION 6 — Structural Kernel Execution",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-009",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-009\nKernel must compute:\nEnergy E(X)\nStability index S(X)\nJacobian spectrum\nFragility vector\nDrift metrics (if history exists)\nComputation must be deterministic.\n\nSECTION 7 — Predictive Layer Activation",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-010",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-010\nPredictive layer executes only if validated W version active.\nElse structural mode enforced.\nNo implicit activation allowed.\n\nSECTION 8 — Application Layer Integrity",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-011",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-011\nOutputs must be:\n- Deterministic\n- Version-logged\n- Structured\n- Derived from upstream layers only\n\nSECTION 9 — Historical State Management",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-012",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-012\nStore X_t, X_{t-1}, ...\nHistorical storage must not alter canonical dimension (112).\n\nSECTION 10 — Continuous Monitoring Engine",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-013",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-013\nAutomated cycle:\nIngest updates\nRecompute X_t\nApply conditioning\nRecompute structural metrics\nCompare with prior states\nGenerate alerts\nManual override prohibited.\n\nSECTION 11 — Data Sufficiency Gate",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-014",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-014\nBefore predictive outputs:\nVerify:\n- Time-series depth\n- Confidence thresholds\n- Signal completeness\n- Sector baseline coverage\n- Required variables present\nIf insufficient:\nAutomatic downgrade to structural mode\nNo override permitted.\n\nSECTION 12 — Multi-Tenant Isolation",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-015",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-015\nSystem must enforce:\nTenant-isolated storage\nStateless compute services\nImmutable audit logs\nVersion-aware execution\nCross-tenant contamination → SYSTEM INVALID\n\nSECTION 13 — Security Controls",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-016",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-016\nRequired:\nEncryption at rest\nEncryption in transit\nRole-based access control\nAudit logging\nTenant isolation\nSecure key management\n\nSECTION 14 — Version Registry Enforcement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-017",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-017\nEvery execution must log:\nCMAS version\nSMS version\nME version\nConditioning matrix version\nW version and mode\nALMS version\nARCH version\nDataset ID (if predictive)\nTimestamp\nMissing metadata → OUTPUT INVALID\n\nSECTION 15 — Operational Risk Controls",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-018",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-018\nPrevent:\nSilent normalization changes\nUnauthorized model updates\nCross-tenant contamination\nManual overrides\nUnlogged configuration changes\nViolation → SYSTEM INVALID\n\nSECTION 16 — Deployment Modes",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-019",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-019\nStructural Mode (Default):\nW = γI\nNo probabilistic forecasts\nFully deterministic\nPredictive Mode requires governance approval.\n\nSECTION 17 — Portfolio-Level Processing",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-020",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-020\nMust support:\nCorrelation structures\nContagion modeling\nSector exposure analysis\nSystemic risk detection\nAll derived from canonical mathematics.\n\nSECTION 18 — Stress Simulation Infrastructure",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-021",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-021\nApply deterministic perturbations to X\nRecompute structural observables\nMagnitude measured via metric G.\n\nSECTION 19 — Infrastructure Integrity Principles",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-ARCH-022",
+      "origin_document": "ARCH",
+      "description": "ACU-ARCH-022\nArchitecture must ensure:\nDeterministic execution\nReproducibility\nTraceability\nScalability\nSecurity\nIsolation\nOperational shortcuts prohibited.\n\nTotal ACUs: 22\nLayer bypass permitted: NO\nSilent configuration change permitted: NO\nManual override permitted: NO\nCross-tenant contamination permitted: NO",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-001",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-001\nCANONICAL_MATHEMATICS_LOCK\nAll outputs must derive exclusively from:\nX ∈ R^112\nX~ = P X\nE(X) = 0.5 X~^T W X~\nS(X) = - max(Re(eigenvalues(J(X~))))\nAlternative scoring systems → HARD_FAIL\n\nSECTION 2 — Deterministic Reproducibility",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-002",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-002\nIdentical inputs + identical versions ⇒ identical outputs\nStochastic production inference prohibited.\n\nSECTION 3 — No Manual Overrides",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-003",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-003\nProhibited manual modification of:\n- X\n- X~\n- Energy values\n- Stability index\n- Fragility vectors\n- Collapse classifications\n- Interaction matrix W\n- Conditioning matrix P\nViolation → SYSTEM INVALID\n\nSECTION 4 — No Heuristic Scoring",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-004",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-004\nDisallowed:\nSubjective ratings\nNarrative risk scores\nCultural assessments\nRed-flag tagging\nQualitative overrides\nAll outputs must be mathematically derived.\n\nSECTION 5 — Operational Modes",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-005",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-005\nSTRUCTURAL_MODE_DEFAULT\nW = γI\nNo probabilistic forecasts",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-006",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-006\nPREDICTIVE_MODE_RESTRICTED\nPredictive mode requires validated W version and governance approval.\nImplicit activation prohibited.\n\nSECTION 6 — Predictive Activation Requirements",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-007",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-007\nPredictive mode may activate only if:\nValidated W version\nDocumented performance metrics\nApproved calibration dataset\nGovernance authorization\nVersion registration\nExplicit activation flag\nMissing condition → Structural mode enforced.\n\nSECTION 7 — Horizon Limits",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-008",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-008\nAllowed horizons: 3, 6, 12 months\nMaximum absolute horizon: 24 months\nLonger forecasts prohibited.\n\nSECTION 8 — Data Sufficiency Enforcement",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-009",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-009\nBefore predictive outputs:\nVerify:\nSignal completeness\nConfidence thresholds\nSector baseline availability\nTime-series depth\nRequired variables present\nIf insufficient:\nAutomatic downgrade to structural mode\nNo override allowed.\n\nSECTION 9 — Version Metadata Requirements",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-010",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-010\nEvery output must include:\nCMAS version\nSMS version\nME version\nConditioning matrix version\nW version and mode\nALMS version\nARCH version\nDataset ID (if predictive)\nTimestamp\nMissing metadata → OUTPUT INVALID\n\nSECTION 10 — Change Control Protocol",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-011",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-011\nChanges to any of the following require governance approval:\nMathematical definitions\nState dimensionality\nSignal ontology\nNormalization rules\nConditioning matrices\nInteraction matrix constraints\nTraining objectives\nPrediction targets\nSilent changes prohibited.\n\nSECTION 11 — Conditioning Matrix Governance",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-012",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-012\nP must be:\n- Derived from calibration\n- Fixed per sector-stage version\n- Documented\n- Version-controlled\n- Non-adaptive during deployment\nUnauthorized modification → SYSTEM INVALID\n\nSECTION 12 — Model Governance (W)",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-013",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-013\nInteraction matrices must:\nBe version registered\nInclude training dataset reference\nInclude validation report\nSatisfy structural constraints\nBe explicitly activated\nAd-hoc models prohibited.\n\nSECTION 13 — Residual Monitoring",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-014",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-014\nMonitor:\nAUC decline beyond threshold\nRising false positives\nCalibration drift\nSector-specific failure\nTriggers review only. No automatic retraining.\n\nSECTION 14 — Retraining Governance",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-015",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-015\nRetraining permitted only when:\nDataset materially expands\nStructural regime shift detected\nPerformance deterioration exceeds thresholds\nContinuous retraining prohibited.\n\nSECTION 15 — Data Integrity Requirements",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-016",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-016\nRaw inputs must be:\nImmutable\nTraceable\nTimestamped\nSource-identified\nTampering invalidates outputs.\n\nSECTION 16 — Security & Access Control",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-017",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-017\nSystem must enforce:\nRole-based access\nEncryption\nAudit logging\nTenant isolation\nSecure key management\nUnauthorized modification must be detectable.\n\nSECTION 17 — Prohibited Representations",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-018",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-018\nSystem must not claim:\nGuaranteed investment outcomes\nExact failure timing\nLegal or fiduciary advice\nElimination of uncertainty\nOutputs classify structural regimes only.\n\nSECTION 18 — Incident Response",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-019",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-019\nIf integrity breach detected:\nSuspend predictive outputs\nNotify stakeholders\nInvestigate\nRestore validated configuration\nDocument incident\n\nSECTION 19 — Auditability",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-020",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-020\nSystem must allow reconstruction of any output using:\nInput snapshot\nMeasurement parameters\nConditioning matrix\nInteraction matrix\nVersion metadata\nNo black-box results permitted.\n\nSECTION 20 — Governance Authority",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-021",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-021\nChanges require designated governing body approval.\nAuthority cannot be delegated to automated processes.\n\nSECTION 21 — Immutability Clause",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-022",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-022\nNo runtime alteration\nNo silent process change\nNo informal exceptions\nViolation → SYSTEM INVALID\n\nSECTION 22 — Supremacy Clause",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    },
+    {
+      "acu_id": "ACU-OGIP-023",
+      "origin_document": "OGIP",
+      "description": "ACU-OGIP-023\nHG-OGIP governs operational behavior.\nHG-CMAS governs mathematical definitions.\nIn conflict, governance protocol controls implementation behavior.\n\nTotal ACUs: 23\nManual override permitted: NO\nSilent modification permitted: NO\nImplicit predictive activation permitted: NO\nStochastic production inference permitted: NO",
+      "enforcement_level": "hard",
+      "enforcement_mode": "governance",
+      "version_introduced": "v1.0"
+    }
+  ],
+  "total_acu_count": 177
+}
