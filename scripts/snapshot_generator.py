@@ -1,6 +1,8 @@
 # HelixGate Snapshot Generator
 # Deterministic Registry Snapshot Engine
-# Governance-Hardened & Drift-Locked Production Version (Non-Circular Hash)
+# Governance-Hardened & Drift-Locked Production Version
+# Non-Circular Hash Model
+# Explicit Hash Order (Must Match compile_validator)
 
 import json
 import hashlib
@@ -9,16 +11,18 @@ import sys
 
 BASE_PATH = "03_canonical_registry"
 
-# Files that define canonical registry state (DO NOT include manifest)
-CANONICAL_FILES = {
-    "registry": f"{BASE_PATH}/global_registry.json",
-    "acu_index": f"{BASE_PATH}/acu_index.json",
-    "dependency_graph": f"{BASE_PATH}/dependency_graph.json",
-}
+# Canonical registry state files (EXCLUDES manifest by design)
+REGISTRY_PATH = f"{BASE_PATH}/global_registry.json"
+ACU_INDEX_PATH = f"{BASE_PATH}/acu_index.json"
+DEPENDENCY_GRAPH_PATH = f"{BASE_PATH}/dependency_graph.json"
 
 MANIFEST_PATH = f"{BASE_PATH}/version_manifest.json"
 SNAPSHOT_PATH = "snapshots/current_snapshot.json"
 
+
+# ---------------------------
+# Utility Functions
+# ---------------------------
 
 def load_json(path):
     if not os.path.exists(path):
@@ -30,6 +34,10 @@ def load_json(path):
 
 
 def canonical_json(obj):
+    """
+    Deterministic JSON serialization.
+    Must match compile_validator exactly.
+    """
     return json.dumps(
         obj,
         sort_keys=True,
@@ -38,46 +46,63 @@ def canonical_json(obj):
     )
 
 
-def load_canonical_data():
-    return {
-        "registry": load_json(CANONICAL_FILES["registry"]),
-        "acu_index": load_json(CANONICAL_FILES["acu_index"]),
-        "dependency_graph": load_json(CANONICAL_FILES["dependency_graph"]),
-    }
+# ---------------------------
+# Canonical Hash Computation
+# ---------------------------
 
+def compute_registry_hash(registry, acu_index, dependency_graph):
+    """
+    Explicit deterministic ordering:
+    registry → acu_index → dependency_graph
 
-def compute_registry_hash(data):
-    # Explicit deterministic order — must match compile_validator
+    DO NOT change ordering.
+    Must remain identical to compile_validator.
+    """
+
     combined = (
-        canonical_json(data["registry"]) +
-        canonical_json(data["acu_index"]) +
-        canonical_json(data["dependency_graph"])
+        canonical_json(registry) +
+        canonical_json(acu_index) +
+        canonical_json(dependency_graph)
     )
+
     return hashlib.sha256(combined.encode("utf-8")).hexdigest()
 
 
+# ---------------------------
+# Main Execution
+# ---------------------------
+
 def main():
-    canonical_data = load_canonical_data()
-    computed_hash = compute_registry_hash(canonical_data)
+    # Load canonical registry state
+    registry = load_json(REGISTRY_PATH)
+    acu_index = load_json(ACU_INDEX_PATH)
+    dependency_graph = load_json(DEPENDENCY_GRAPH_PATH)
+
+    computed_hash = compute_registry_hash(
+        registry,
+        acu_index,
+        dependency_graph
+    )
 
     manifest = load_json(MANIFEST_PATH)
 
     registry_version = manifest.get("registry_version")
-    registry_hash = manifest.get("registry_hash")
+    manifest_hash = manifest.get("registry_hash")
     operating_mode = manifest.get("operating_mode")
 
-    # Hard fail if manifest missing required values
-    if not registry_hash or not registry_version:
+    # Mandatory manifest validation
+    if not registry_version or not manifest_hash:
         print("Manifest missing registry_version or registry_hash. Aborting.")
         sys.exit(1)
 
-    # Enforce registry hash consistency (non-circular)
-    if computed_hash != registry_hash:
+    # Enforce hash consistency (non-circular model)
+    if computed_hash != manifest_hash:
         print("Registry hash does not match manifest registry_hash. Aborting.")
         print("Computed:", computed_hash)
-        print("Manifest:", registry_hash)
+        print("Manifest:", manifest_hash)
         sys.exit(1)
 
+    # Prepare snapshot payload
     snapshot = {
         "registry_hash": computed_hash,
         "operating_mode": operating_mode,
@@ -85,11 +110,11 @@ def main():
 
     os.makedirs("snapshots", exist_ok=True)
 
-    # Rolling snapshot
+    # Rolling snapshot (overwrites safely)
     with open(SNAPSHOT_PATH, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=4)
 
-    # Version-bound archival snapshot (immutable)
+    # Version-bound archival snapshot (immutable by design)
     versioned_path = f"snapshots/registry_{registry_version}.json"
 
     if os.path.exists(versioned_path):
