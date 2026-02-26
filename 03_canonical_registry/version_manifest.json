@@ -8,5 +8,11 @@
   "OGIP_version": "v1.0",
   "conditioning_matrix_version": "v1.0",
   "operating_mode": "STRUCTURAL_ONLY",
+
+  "registry_version": "1.0.0",
+  "change_type": "INITIAL",
+  "change_reason": "Initial constitutional freeze",
+  "previous_registry_hash": null,
+
   "registry_hash": "a0e9a3e033079e983d31ad33a18bd00558bf4055e69b1ff1caa1144d57508282"
 }
