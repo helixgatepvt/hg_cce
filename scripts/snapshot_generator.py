@@ -1,6 +1,6 @@
 # HelixGate Snapshot Generator
 # Deterministic Registry Snapshot Engine
-# Governance-Hardened Version (Debug Hash Mode)
+# Governance-Hardened Production Version
 
 import json
 import hashlib
@@ -61,15 +61,14 @@ def main():
     registry_hash = manifest.get("registry_hash")
     operating_mode = manifest.get("operating_mode")
 
-    # 🔒 HARD FAIL if manifest missing required values
+    # Hard fail if manifest missing required values
     if not registry_hash or not registry_version:
         print("Manifest missing registry_version or registry_hash. Aborting.")
         sys.exit(1)
 
-    # 🔒 Enforce registry hash consistency (DEBUG PRINT MODE)
+    # Enforce registry hash consistency
     if snapshot_hash != registry_hash:
-        print("Computed hash:", snapshot_hash)
-        print("Manifest hash:", registry_hash)
+        print("Snapshot hash does not match manifest registry_hash. Aborting.")
         sys.exit(1)
 
     snapshot = {
