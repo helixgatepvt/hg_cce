@@ -39,16 +39,20 @@ def canonical_json(obj):
 
 
 def load_canonical_data():
-    data = {}
-    for key in sorted(CANONICAL_FILES.keys()):
-        data[key] = load_json(CANONICAL_FILES[key])
-    return data
+    return {
+        "registry": load_json(CANONICAL_FILES["registry"]),
+        "acu_index": load_json(CANONICAL_FILES["acu_index"]),
+        "dependency_graph": load_json(CANONICAL_FILES["dependency_graph"]),
+    }
 
 
 def compute_registry_hash(data):
-    combined = ""
-    for key in sorted(data.keys()):
-        combined += canonical_json(data[key])
+    # Explicit deterministic order — must match compile_validator
+    combined = (
+        canonical_json(data["registry"]) +
+        canonical_json(data["acu_index"]) +
+        canonical_json(data["dependency_graph"])
+    )
     return hashlib.sha256(combined.encode("utf-8")).hexdigest()
 
 
@@ -67,9 +71,11 @@ def main():
         print("Manifest missing registry_version or registry_hash. Aborting.")
         sys.exit(1)
 
-    # Enforce registry hash consistency (non-circular now)
+    # Enforce registry hash consistency (non-circular)
     if computed_hash != registry_hash:
         print("Registry hash does not match manifest registry_hash. Aborting.")
+        print("Computed:", computed_hash)
+        print("Manifest:", registry_hash)
         sys.exit(1)
 
     snapshot = {
