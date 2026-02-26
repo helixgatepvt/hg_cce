@@ -47,20 +47,33 @@ def main():
 
     manifest = data["manifest"]
 
+    registry_version = manifest.get("registry_version")
+    registry_hash = manifest.get("registry_hash")
+
     snapshot = {
         "snapshot_hash": snapshot_hash,
         "operating_mode": manifest.get("operating_mode"),
-        "registry_hash": manifest.get("registry_hash")
+        "registry_hash": registry_hash
     }
 
     os.makedirs("snapshots", exist_ok=True)
 
+    # 1️⃣ Keep legacy snapshot (non-breaking)
     with open(SNAPSHOT_PATH, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=4)
 
+    # 2️⃣ New version-bound archival snapshot
+    if registry_version:
+        versioned_path = f"snapshots/registry_{registry_version}.json"
+
+        archival_snapshot = {
+            "registry_version": registry_version,
+            "registry_hash": registry_hash,
+            "snapshot_hash": snapshot_hash
+        }
+
+        with open(versioned_path, "w", encoding="utf-8") as f:
+            json.dump(archival_snapshot, f, indent=4)
+
     print("Snapshot generated.")
     print("SHA256:", snapshot_hash)
-
-
-if __name__ == "__main__":
-    main()
