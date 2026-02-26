@@ -1,6 +1,6 @@
 # HelixGate Snapshot Generator
 # Deterministic Registry Snapshot Engine
-# Governance-Hardened & Drift-Locked Production Version
+# Governance-Hardened & Drift-Locked Production Version (Non-Circular Hash)
 
 import json
 import hashlib
@@ -9,19 +9,20 @@ import sys
 
 BASE_PATH = "03_canonical_registry"
 
-REGISTRY_FILES = {
+# Files that define canonical registry state (DO NOT include manifest)
+CANONICAL_FILES = {
     "registry": f"{BASE_PATH}/global_registry.json",
     "acu_index": f"{BASE_PATH}/acu_index.json",
     "dependency_graph": f"{BASE_PATH}/dependency_graph.json",
-    "manifest": f"{BASE_PATH}/version_manifest.json"
 }
 
+MANIFEST_PATH = f"{BASE_PATH}/version_manifest.json"
 SNAPSHOT_PATH = "snapshots/current_snapshot.json"
 
 
 def load_json(path):
     if not os.path.exists(path):
-        print(f"Missing required registry file: {path}")
+        print(f"Missing required file: {path}")
         sys.exit(1)
 
     with open(path, "r", encoding="utf-8") as f:
@@ -37,14 +38,14 @@ def canonical_json(obj):
     )
 
 
-def load_registry_data():
+def load_canonical_data():
     data = {}
-    for key in sorted(REGISTRY_FILES.keys()):
-        data[key] = load_json(REGISTRY_FILES[key])
+    for key in sorted(CANONICAL_FILES.keys()):
+        data[key] = load_json(CANONICAL_FILES[key])
     return data
 
 
-def compute_snapshot_hash(data):
+def compute_registry_hash(data):
     combined = ""
     for key in sorted(data.keys()):
         combined += canonical_json(data[key])
@@ -52,10 +53,10 @@ def compute_snapshot_hash(data):
 
 
 def main():
-    data = load_registry_data()
-    snapshot_hash = compute_snapshot_hash(data)
+    canonical_data = load_canonical_data()
+    computed_hash = compute_registry_hash(canonical_data)
 
-    manifest = data["manifest"]
+    manifest = load_json(MANIFEST_PATH)
 
     registry_version = manifest.get("registry_version")
     registry_hash = manifest.get("registry_hash")
@@ -66,20 +67,19 @@ def main():
         print("Manifest missing registry_version or registry_hash. Aborting.")
         sys.exit(1)
 
-    # Enforce registry hash consistency
-    if snapshot_hash != registry_hash:
-        print("Snapshot hash does not match manifest registry_hash. Aborting.")
+    # Enforce registry hash consistency (non-circular now)
+    if computed_hash != registry_hash:
+        print("Registry hash does not match manifest registry_hash. Aborting.")
         sys.exit(1)
 
     snapshot = {
-        "snapshot_hash": snapshot_hash,
+        "registry_hash": computed_hash,
         "operating_mode": operating_mode,
-        "registry_hash": registry_hash
     }
 
     os.makedirs("snapshots", exist_ok=True)
 
-    # Current rolling snapshot (non-immutable)
+    # Rolling snapshot
     with open(SNAPSHOT_PATH, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=4)
 
@@ -92,15 +92,14 @@ def main():
 
     archival_snapshot = {
         "registry_version": registry_version,
-        "registry_hash": registry_hash,
-        "snapshot_hash": snapshot_hash
+        "registry_hash": computed_hash
     }
 
     with open(versioned_path, "w", encoding="utf-8") as f:
         json.dump(archival_snapshot, f, indent=4)
 
     print("Snapshot generated successfully.")
-    print("SHA256:", snapshot_hash)
+    print("Registry SHA256:", computed_hash)
 
 
 if __name__ == "__main__":
