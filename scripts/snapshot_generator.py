@@ -1,6 +1,6 @@
 # HelixGate Snapshot Generator
 # Deterministic Registry Snapshot Engine
-# Governance-Hardened Production Version
+# Governance-Hardened & Drift-Locked Production Version
 
 import json
 import hashlib
@@ -79,12 +79,16 @@ def main():
 
     os.makedirs("snapshots", exist_ok=True)
 
-    # Current snapshot
+    # Current rolling snapshot (non-immutable)
     with open(SNAPSHOT_PATH, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=4)
 
-    # Version-bound archival snapshot
+    # Version-bound archival snapshot (immutable)
     versioned_path = f"snapshots/registry_{registry_version}.json"
+
+    if os.path.exists(versioned_path):
+        print(f"Snapshot for version {registry_version} already exists. Immutable lock enforced.")
+        sys.exit(1)
 
     archival_snapshot = {
         "registry_version": registry_version,
