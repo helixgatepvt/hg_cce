@@ -62,7 +62,7 @@ def main():
     operating_mode = manifest.get("operating_mode")
 
     # 🔒 HARD FAIL if manifest missing required values
-    if not registry_hash or not registry_version:
+      if not registry_hash or not registry_version:
         print("Manifest missing registry_version or registry_hash. Aborting.")
         sys.exit(1)
 
@@ -72,12 +72,12 @@ def main():
         print("Manifest hash:", registry_hash)
         sys.exit(1)
 
-    
     snapshot = {
         "snapshot_hash": snapshot_hash,
         "operating_mode": operating_mode,
         "registry_hash": registry_hash
     }
+
 
     os.makedirs("snapshots", exist_ok=True)
 
