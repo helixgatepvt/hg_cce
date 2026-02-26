@@ -27,3 +27,7 @@ jobs:
 
       - name: Run Compile Validator
         run: python 04_validation/compile_validator.py
+
+        - name: Generate Constitutional Snapshot
+  run: python scripts/snapshot_generator.py
+
