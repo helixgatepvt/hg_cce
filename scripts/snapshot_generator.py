@@ -1,6 +1,6 @@
 # HelixGate Snapshot Generator
 # Deterministic Registry Snapshot Engine
-# Governance-Hardened Version
+# Governance-Hardened Version (Debug Hash Mode)
 
 import json
 import hashlib
@@ -62,11 +62,11 @@ def main():
     operating_mode = manifest.get("operating_mode")
 
     # 🔒 HARD FAIL if manifest missing required values
-      if not registry_hash or not registry_version:
+    if not registry_hash or not registry_version:
         print("Manifest missing registry_version or registry_hash. Aborting.")
         sys.exit(1)
 
-    # 🔒 Enforce registry hash consistency
+    # 🔒 Enforce registry hash consistency (DEBUG PRINT MODE)
     if snapshot_hash != registry_hash:
         print("Computed hash:", snapshot_hash)
         print("Manifest hash:", registry_hash)
@@ -78,14 +78,13 @@ def main():
         "registry_hash": registry_hash
     }
 
-
     os.makedirs("snapshots", exist_ok=True)
 
-    # 1️⃣ Current snapshot (non-breaking legacy path)
+    # Current snapshot
     with open(SNAPSHOT_PATH, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=4)
 
-    # 2️⃣ Version-bound archival snapshot
+    # Version-bound archival snapshot
     versioned_path = f"snapshots/registry_{registry_version}.json"
 
     archival_snapshot = {
