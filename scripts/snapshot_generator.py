@@ -69,7 +69,8 @@ def main():
 
     # Enforce registry hash consistency (non-circular now)
     if computed_hash != registry_hash:
-        print("Registry hash does not match manifest registry_hash. Aborting.")
+        print("Computed canonical hash:", computed_hash)
+        print("Manifest hash:", registry_hash)
         sys.exit(1)
 
     snapshot = {
