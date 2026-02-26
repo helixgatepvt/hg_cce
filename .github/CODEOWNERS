@@ -4,12 +4,12 @@
 # ==========================================================
 
 # Core deterministic engine
-/engine/core/          @helixgate-governance
-/engine/vectors/       @helixgate-governance
-/engine/weights/       @helixgate-governance
-/engine/canonical/     @helixgate-governance
-/engine/hash/          @helixgate-governance
-/engine/schema/        @helixgate-governance
+#/engine/core/          @helixgate-governance
+#/engine/vectors/       @helixgate-governance
+#/engine/weights/       @helixgate-governance
+#/engine/canonical/     @helixgate-governance
+#/engine/hash/          @helixgate-governance
+#/engine/schema/        @helixgate-governance
 
 # Release artifacts and model definitions
 /releases/             @helixgate-governance
