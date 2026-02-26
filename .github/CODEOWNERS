@@ -4,17 +4,16 @@
 # ==========================================================
 
 # Core deterministic engine
-#/engine/core/          @helixgate-governance
-#/engine/vectors/       @helixgate-governance
-#/engine/weights/       @helixgate-governance
-#/engine/canonical/     @helixgate-governance
-#/engine/hash/          @helixgate-governance
-#/engine/schema/        @helixgate-governance
+#/engine/core/          @HelixGatePrivate/helixgate-governance
+#/engine/vectors/       @HelixGatePrivate/helixgate-governance
+#/engine/weights/       @HelixGatePrivate/helixgate-governance
+#/engine/canonical/     @HelixGatePrivate/helixgate-governance
+#/engine/hash/          @HelixGatePrivate/helixgate-governance
+#/engine/schema/        @HelixGatePrivate/helixgate-governance
 
 # Release artifacts and model definitions
-/releases/             @helixgate-governance
-/model_version/        @helixgate-governance
+/releases/             @HelixGatePrivate/helixgate-governance
+/model_version/        @HelixGatePrivate/helixgate-governance
 
 # CI cannot be modified without governance approval
-/.github/workflows/    @helixgate-governance
-
+/.github/workflows/    @HelixGatePrivate/helixgate-governance
