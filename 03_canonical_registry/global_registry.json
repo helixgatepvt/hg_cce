@@ -1,4 +1,6 @@
 {
+"_freeze_test_marker": true,
+  
   "registry_version": "v1.0-registry",
   "operating_mode": "STRUCTURAL_ONLY",
   "predictive_layer_status": "DORMANT",
