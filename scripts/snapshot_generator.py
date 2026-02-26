@@ -68,9 +68,11 @@ def main():
 
     # 🔒 Enforce registry hash consistency
     if snapshot_hash != registry_hash:
-        print("Snapshot hash does not match manifest registry_hash. Aborting.")
+        print("Computed hash:", snapshot_hash)
+        print("Manifest hash:", registry_hash)
         sys.exit(1)
 
+    
     snapshot = {
         "snapshot_hash": snapshot_hash,
         "operating_mode": operating_mode,
