@@ -1,10 +1,11 @@
 # HelixGate Snapshot Generator
 # Deterministic Registry Snapshot Engine
-# Aligned with Compile Validator Path Structure
+# Governance-Hardened Version
 
 import json
 import hashlib
 import os
+import sys
 
 BASE_PATH = "03_canonical_registry"
 
@@ -19,12 +20,21 @@ SNAPSHOT_PATH = "snapshots/current_snapshot.json"
 
 
 def load_json(path):
+    if not os.path.exists(path):
+        print(f"Missing required registry file: {path}")
+        sys.exit(1)
+
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def canonical_json(obj):
-    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return json.dumps(
+        obj,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False
+    )
 
 
 def load_registry_data():
@@ -49,31 +59,45 @@ def main():
 
     registry_version = manifest.get("registry_version")
     registry_hash = manifest.get("registry_hash")
+    operating_mode = manifest.get("operating_mode")
+
+    # 🔒 HARD FAIL if manifest missing required values
+    if not registry_hash or not registry_version:
+        print("Manifest missing registry_version or registry_hash. Aborting.")
+        sys.exit(1)
+
+    # 🔒 Enforce registry hash consistency
+    if snapshot_hash != registry_hash:
+        print("Snapshot hash does not match manifest registry_hash. Aborting.")
+        sys.exit(1)
 
     snapshot = {
         "snapshot_hash": snapshot_hash,
-        "operating_mode": manifest.get("operating_mode"),
+        "operating_mode": operating_mode,
         "registry_hash": registry_hash
     }
 
     os.makedirs("snapshots", exist_ok=True)
 
-    # 1️⃣ Keep legacy snapshot (non-breaking)
+    # 1️⃣ Current snapshot (non-breaking legacy path)
     with open(SNAPSHOT_PATH, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=4)
 
-    # 2️⃣ New version-bound archival snapshot
-    if registry_version:
-        versioned_path = f"snapshots/registry_{registry_version}.json"
+    # 2️⃣ Version-bound archival snapshot
+    versioned_path = f"snapshots/registry_{registry_version}.json"
 
-        archival_snapshot = {
-            "registry_version": registry_version,
-            "registry_hash": registry_hash,
-            "snapshot_hash": snapshot_hash
-        }
+    archival_snapshot = {
+        "registry_version": registry_version,
+        "registry_hash": registry_hash,
+        "snapshot_hash": snapshot_hash
+    }
 
-        with open(versioned_path, "w", encoding="utf-8") as f:
-            json.dump(archival_snapshot, f, indent=4)
+    with open(versioned_path, "w", encoding="utf-8") as f:
+        json.dump(archival_snapshot, f, indent=4)
 
-    print("Snapshot generated.")
+    print("Snapshot generated successfully.")
     print("SHA256:", snapshot_hash)
+
+
+if __name__ == "__main__":
+    main()
